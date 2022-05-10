@@ -1,0 +1,28 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "Node CLI to get weather in the required city",
+  "main": "weather.js",
+  "type": "module",
+  "bin": {
+    "weather": "weather.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velidan/node-weather-cli.git"
+  },
+  "keywords": [
+    "node",
+    "cli",
+    "weather"
+  ],
+  "author": "Velidan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/velidan/node-weather-cli/issues"
+  },
+  "homepage": "https://github.com/velidan/node-weather-cli#readme"
+}
