@@ -1,6 +1,5 @@
 const getArgs = args => {
   const res = {};
-  console.log('process.argv', args);
   const [executer, file, ...rest] = args;
 
   rest.forEach((value, index, array) => {
