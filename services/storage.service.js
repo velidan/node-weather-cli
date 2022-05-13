@@ -2,8 +2,12 @@ import { join } from 'path';
 import process from 'node:process';
 import { promises } from 'fs';
 
+const TOKEN_DICTIONARY = {
+  token: 'token',
+  city: 'city'
+};
+
 const filePath = join(process.cwd(), 'weather-data.json');
-console.log('filepath -> ', filePath);
 
 const saveKeyValue = async (key, value) => {
   let data = {};
@@ -19,7 +23,7 @@ const saveKeyValue = async (key, value) => {
 
 async function isExist(path) {
   try {
-    await promises.state(path);
+    await promises.stat(path);
     return true;
   } catch (e) {
     return false;
@@ -29,6 +33,7 @@ async function isExist(path) {
 
 async function getKeyValue(key) {
   if (await isExist(filePath)) {
+
     const file = await promises.readFile(filePath);
     const data = JSON.parse(file);
     return data[key];
@@ -37,4 +42,4 @@ async function getKeyValue(key) {
   return undefined;
 }
 
-export { saveKeyValue, getKeyValue }
+export { saveKeyValue, getKeyValue, TOKEN_DICTIONARY }
